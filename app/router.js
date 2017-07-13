@@ -6,9 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-	this.route('index');
+	this.route('index', {path:'/'});
 	this.route('widgets');
-	this.route('twitter' , {path:'/'});
+	this.route('twitter');
 	this.route('general-ui');
 	this.route('comingsoon');
 	this.route('ui-icons');
