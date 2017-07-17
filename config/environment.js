@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    host: 'http://localhost:8000',
     modulePrefix: 'emberdashboard4',
     environment: environment,
     baseURL: '/',
@@ -30,6 +31,10 @@ module.exports = function(environment) {
       },
   };
 
+  if(environment === 'development') {
+    ENV.host = 'http://localhost:8000'
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -53,6 +58,12 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'login',
+    routeAfterAuthentication: 'index',
+    routeIfAlreadyAuthenticated: 'index'
+  };
 
   return ENV;
 };

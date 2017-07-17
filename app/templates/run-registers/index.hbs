@@ -1,0 +1,60 @@
+<h1>Runregisters list</h1>
+
+<p>
+  {{link-to "New Runregister" "runRegisters.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Details
+        </th>
+        <th>
+          Time
+        </th>
+        <th>
+          Date
+        </th>
+        <th>
+          Finished
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |runRegister|}}
+        <tr>
+          <td>
+            {{runRegister.details}}
+          </td>
+          <td>
+            {{runRegister.time}}
+          </td>
+          <td>
+            {{runRegister.date}}
+          </td>
+          <td>
+            {{runRegister.finished}}
+          </td>
+          <td>
+            {{link-to "Edit" "runRegisters.edit" runRegister}}
+          </td>
+          <td>
+            {{link-to "Show" "runRegisters.show" runRegister}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" runRegister}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Runregisters found
+  </p>
+{{/if}}

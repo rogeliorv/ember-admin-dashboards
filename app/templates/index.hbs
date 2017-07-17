@@ -13,50 +13,10 @@
   <!-- Info boxes -->
   {{partial 'dashboard/dashboard-info-boxes'}}
 
-
   <div class="row">
     <div class="col-md-12">
-      {{#box-widget
-        title = "Monthly Recap Report"
-        footer= "dashboard/monthly-recap-footer"
-      }}
-        {{partial "dashboard/monthly-recap-body"}}
-      {{/box-widget}}
+
     </div><!-- /.col -->
   </div><!-- /.row -->
 
-  <!-- Main row -->
-  <div class="row">
-    <!-- Left col -->
-    <div class="col-md-8">
-      <!-- MAP & BOX PANE -->
-      {{#box-widget
-        title = "Visitors Report"
-        bodyClass= "no-padding"
-        class= "box-success"
-      }}
-        {{partial "dashboard/visitors-report-body"}}
-      {{/box-widget}}
-
-      {{!-- <div class="box box-success">
-        <div class="box-header with-border">
-          <h3 class="box-title">Visitors Report</h3>
-          <div class="box-tools pull-right">
-            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-          </div>
-        </div><!-- /.box-header -->
-        <div class="box-body no-padding">
-          <div class="row">
-
-          </div><!-- /.row -->
-        </div><!-- /.box-body -->
-      </div><!-- /.box --> --}}
-
-    </div><!-- /.col -->
-
-    <div class="col-md-4">
-      {{partial 'dashboard/dashboard-full-info-boxes'}}
-    </div><!-- /.col -->
-  </div><!-- /.row -->
 </section><!-- /.content -->
