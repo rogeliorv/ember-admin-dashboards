@@ -29,8 +29,6 @@ export default Base.extend({
         dataType: 'json'
       }).then((response) => {
         Ember.run(function() {
-          console.log("YAY");
-          console.log(response.token);
           resolve({
             token: response.token
           });
