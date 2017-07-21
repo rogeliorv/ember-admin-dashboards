@@ -30,4 +30,17 @@ export default Router.map(function() {
   });
   this.route('login');
   this.route('register');
+  this.route('resetPassword');
+  this.route('profile');
+  this.route('users', function() {
+    this.route('new');
+
+    this.route('edit', {
+      path: ':user_id/edit'
+    });
+
+    this.route('show', {
+      path: ':user_id'
+    });
+  });
 });

@@ -5,9 +5,8 @@ export default Ember.Mixin.create({
     save: function() {
       var route = this;
       this.currentModel.save().then(function() {
-        route.transitionTo('runRegisters');
+        route.transitionTo('users');
       }, function() {
-        console.log(arguments);
         console.log('Failed to save the model');
       });
     },
@@ -18,4 +17,5 @@ export default Ember.Mixin.create({
       record.rollbackAttributes();
     },
   },
+
 });

@@ -1,6 +1,25 @@
-<p>
-  {{link-to "Runregister list" "runRegisters.index" }}
-</p>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    <i class="fa fa-user-heartbeat"></i> Edit run record
+  </h1>
+</section>
 
-<h1>Edit Runregister</h1>
-{{partial "runRegisters/form"}}
+
+<section class="content">
+
+	<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <p>
+        <i class="fa fa-dashboard"></i>
+        {{link-to "Return to dashboard" "runRegisters.index" }}
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      {{partial "runRegisters/form"}}
+    </div>
+  </div>
+</section>

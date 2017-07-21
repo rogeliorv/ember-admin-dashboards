@@ -93,7 +93,6 @@ export default Ember.Controller.extend({
 		    ],
 
 	init: function(){
-		console.log("Logic here");
 		this.gPlusTime();
 		this.changeMocks();
 	},

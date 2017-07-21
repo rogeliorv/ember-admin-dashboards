@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '../config/environment';
 
 export default Ember.Controller.extend({
 
@@ -11,14 +12,15 @@ export default Ember.Controller.extend({
         'confirm_password'
       );
 
+
       Ember.$.ajax({
-        url: ENV.host + '/api-register/',
+        url: config.host + '/rest-auth/registration/',
         type: 'POST',
         data: JSON.stringify({
           username: username,
           email: email,
-          password: password,
-          confirm_password: confirm_password
+          password1: password,
+          password2: confirm_password
         }),
         contentType: 'application/json;charset=utf-8',
         dataType: 'json'

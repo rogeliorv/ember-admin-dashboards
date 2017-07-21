@@ -1,17 +1,52 @@
-<form {{action 'authenticate' on='submit'}}>
-  <p>
-    <label for="username">Login</label>
-    {{input id='username' placeholder='Enter Login' value=username}}
-  </p>
-  <p>
-    <label for="password">Password</label>
-    {{input id='password' placeholder='Enter Password' type='password' value=password}}
-  </p>
-  <p>
-    <button type="submit">Login</button>
-  </p>
-  {{#if error}}
-    <p>{{error}}</p>
-  {{/if}}
-</form>
+<section class="loginSection">
+  <!-- <img src="/static/images/escudo_edo.png" height="140px"> -->
+  <form {{action 'authenticate' on='submit'}}>
+
+     <div>
+       {{#if usernameErrors }}
+         <ul class="error">
+           {{#each usernameErrors as |error|}}
+             {{log error}}
+             <li>{{error}}</li>
+           {{/each}}
+         </ul>
+        {{/if}}
+         <div class="form-group text-left">
+             <label for="username">Username</label>
+             {{input id='username' class="form-control" placeholder='Username' required="" value=username}}
+         </div>
+     </div>
+
+     <div>
+       {{#if passwordErrors }}
+         <ul class="error">
+           {{#each passwordErrors as |error|}}
+             <li>{{error}}</li>
+           {{/each}}
+         </ul>
+        {{/if}}
+         <div class="form-group text-left">
+             <label for="password">Password</label>
+             {{input id='password' class="form-control" placeholder='Password' type='password' value=password required=""}}
+         </div>
+     </div>
+
+     <button class="btn btn-default submit" type="submit">
+         Login
+     </button>
+
+    {{#if errorMessages }}
+      <ul class="error">
+        {{#each errorMessages as |error|}}
+          <li>{{error}}</li>
+        {{/each}}
+      </ul>
+     {{/if}}
+  </form>
+
+  <div>
+    {{#link-to 'resetPassword'}}Forgot Password?{{/link-to}}
+  </div>
+
+</section>
 {{outlet}}

@@ -1,29 +1,24 @@
 <form {{action "save" on="submit"}}>
-  <div>
-    <label>
-      Details
-      {{input type="text" value=model.details}}
-    </label>
-  </div>
-  <div>
-    <label>
-      Time
-      {{input type="text" value=model.time}}
-    </label>
-  </div>
-  <div>
-    <label>
-      Date
-      {{input type="text" value=model.date}}
-    </label>
-  </div>
-  <div>
-    <label>
-      Distance
-      {{input type="text" value=model.distance}}
-    </label>
-  </div>
-  <div>
-    <input type="submit" value="Save">
+  <div class="form-group">
+
+      <label for="time">Time (Minutes)</label>
+      {{input name="time" class="form-control" type="number" value=model.time placeholder="45 minutes" autofocus=true required=true}}
+
+      <label for="distance">Distance (Kilometers)</label>
+      {{input name="distance" class="form-control" type="number" value=model.distance placeholder="5 km" required=true}}
+
+      <label for="averageSpeed">Average Speed</label>
+      {{input name="averageSpeed" class="form-control" type="number" value=model.averageSpeed disabled=true}}
+
+      <label for="date">Date</label>
+      {{input name="date" class="form-control" type="text" value=model.date placeholder="YYYY-MM-DD" required=true}}
+
+      <label for="location">Location</label>
+      {{input name="location" class="form-control" type="text" value=model.location placeholder="Central Park" required=false}}
+
+      <label for="details">Details</label>
+      {{textarea name="details" class="form-control" type="text" value=model.details placeholder="Run details" required=false}}
+
+    <button type="submit" class="btn btn-default">Save</button>
   </div>
 </form>

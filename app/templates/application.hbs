@@ -1,14 +1,14 @@
-<div class="wrapper">
-  {{application-header}}
-  {{application-sidebar}}
-  <!-- Right side column. Contains the navbar and content of the page -->
-  <div class="content-wrapper">
-  	{{liquid-outlet}}
-  </div><!-- /.content-wrapper -->
+{{# if session.isAuthenticated }}
+  <div class="wrapper">
+    {{application-header}}
+    {{application-sidebar}}
+    <!-- Right side column. Contains the navbar and content of the page -->
+    <div class="content-wrapper">
+    	{{liquid-outlet}}
+    </div><!-- /.content-wrapper -->
 
-  {{application-footer}}
-
-</div><!-- ./wrapper -->
-
-
-
+    {{application-footer}}
+  </div><!-- ./wrapper -->
+{{ else }}
+  {{ liquid-outlet }}
+{{/ if}}

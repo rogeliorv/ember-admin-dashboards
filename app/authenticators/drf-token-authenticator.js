@@ -15,9 +15,6 @@ export default Base.extend({
   authenticate(username, password) {
     return new Ember.RSVP.Promise((resolve, reject) => {
 
-      console.log(username);
-      console.log(password);
-
       Ember.$.ajax({
         url: config.host + '/api-auth-token/',
         type: 'POST',
