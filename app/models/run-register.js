@@ -7,6 +7,7 @@ export default DS.Model.extend({
   date: DS.attr('string'),
   location: DS.attr('string'),
   details: DS.attr('string'),
+  userId: DS.attr('number'),
   speed: Ember.computed('time', 'distance', function() {
 
     let time = this.get('time') / 60.0;

@@ -35,8 +35,6 @@
         </thead>
         <tbody>
           {{#each model as |user|}}
-            {{ log user }}
-
             <tr>
               <td> {{ user.firstName }} {{ user.lastName }} </td>
               <td> {{# link-to "users.edit" user }}<i class="fa fa-pencil"></i>{{/link-to}}</td>

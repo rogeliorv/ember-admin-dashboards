@@ -1,21 +1,31 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <i class="fa fa-user"></i> Edit user profile
+    <i class="fa fa-user"></i> Edit profile for {{model.username}}
   </h1>
 </section>
-
 
 <section class="content">
 
 	<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
+      {{#if (or currentUser.user.isSuperuser currentUser.user.isStaff) }}
       <p>
         <i class="fa fa-users"></i>
         {{link-to "All users" "users.index" }}
       </p>
+      {{/if}}
+
+      {{#if currentUser.user.isSuperuser}}
+      <p>
+        <i class="fa fa-dashboard"></i>
+        {{#link-to "runRegisters.user" model.id }} Go to running data {{/link-to}}
+      </p>
+      {{/if}}
+
     </div>
   </div>
+
 
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">

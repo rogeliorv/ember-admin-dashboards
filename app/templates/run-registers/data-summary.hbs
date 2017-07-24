@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="small-box bg-green">
+        <div class="inner">
+          <h3> Best speed </h3>
+          <p> {{model.summaryData.bestSpeedRun.speedFixed}} km/h </p>
+        </div>
+        <div class="icon"><i class="ion ion-ios-bolt"></i></div>
+        {{# link-to "runRegisters" class="small-box-footer" }} {{model.summaryData.bestSpeedRun.distance }} km over {{ model.summaryData.bestSpeedRun.time }} minutes {{/link-to}}
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="small-box bg-red">
+        <div class="inner">
+          <h3> Worst speed </h3>
+          <p>{{model.summaryData.worstSpeedRun.speedFixed}} km/h</p>
+        </div>
+        <div class="icon"> <i class="ion ion-ios-bolt"></i></div>
+        {{# link-to "runRegisters" class="small-box-footer" }} {{model.summaryData.worstSpeedRun.distance }} km over {{ model.summaryData.worstSpeedRun.time }} minutes {{/link-to}}
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="small-box bg-blue">
+        <div class="inner">
+          <h3> Avg speed </h3>
+          <p>{{model.summaryData.averageSpeed}} km/h</p>
+        </div>
+        <div class="icon"> <i class="ion ion-ios-bolt"></i></div>
+        {{# link-to "runRegisters" class="small-box-footer" }}Out of {{model.length}} runs{{/link-to}}
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="small-box bg-green">
+        <div class="inner">
+          <h3> Best dist. </h3>
+          <p> {{model.summaryData.bestDistanceRun.distance}} km </p>
+        </div>
+        <div class="icon"><i class="ion ion-ios-paw"></i></div>
+        {{# link-to "runRegisters" class="small-box-footer" }}Average speed {{ model.summaryData.bestDistanceRun.speedFixed }} km/h{{/link-to}}
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="small-box bg-red">
+        <div class="inner">
+          <h3> Worst dist. </h3>
+          <p>{{model.summaryData.worstDistanceRun.distance}} km </p>
+        </div>
+        <div class="icon"> <i class="ion ion-ios-paw"></i></div>
+        {{# link-to "runRegisters" class="small-box-footer" }}Average speed {{ model.summaryData.worstDistanceRun.speedFixed }} km/h{{/link-to}}
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="small-box bg-blue">
+        <div class="inner">
+          <h3> Avg dist. </h3>
+          <p>{{model.summaryData.averageRunDistance}} km</p>
+        </div>
+        <div class="icon"> <i class="ion ion-ios-paw"></i></div>
+        {{# link-to "runRegisters" class="small-box-footer" }}Out of {{model.length}} runs{{/link-to}}
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="small-box bg-green">
+        <div class="inner">
+          <h3> Best time </h3>
+          <p> {{model.summaryData.bestTimeRun.time}} minutes </p>
+        </div>
+        <div class="icon"><i class="ion ion-clock"></i></div>
+        {{# link-to "runRegisters" class="small-box-footer" }}Average Speed {{model.summaryData.bestTimeRun.speedFixed }} km/h {{/link-to}}
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="small-box bg-red">
+        <div class="inner">
+          <h3> Worst Time </h3>
+          <p>{{model.summaryData.worstTimeRun.time}} minutes</p>
+        </div>
+        <div class="icon"> <i class="ion ion-clock"></i></div>
+        {{# link-to "runRegisters" class="small-box-footer" }}Average Speed {{model.summaryData.worstTimeRun.speedFixed }} km/h {{/link-to}}
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="small-box bg-blue">
+        <div class="inner">
+          <h3> Avg Time </h3>
+          <p>{{model.summaryData.averageRunTime}} minutes</p>
+        </div>
+        <div class="icon"> <i class="ion ion-clock"></i></div>
+        {{# link-to "runRegisters" class="small-box-footer" }}Out of {{model.length}} runs{{/link-to}}
+    </div>
+  </div>
+</div>

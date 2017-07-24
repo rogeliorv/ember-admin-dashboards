@@ -1,0 +1,21 @@
+<section class="content-header">
+  <h1>
+    {{ log currentUser}}
+    <i class="fa fa-dashboard"></i> Running data for {{model.user.username}}
+    <small>{{model.length}}
+      {{#if (gt model.length 1)}}runs{{else}}run{{/if}} recorded
+    </small>
+  </h1>
+</section>
+
+<section class="content">
+	<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      {{#link-to "runRegisters.new" model.user.id }}Add running record{{/link-to}}
+    </div>
+  </div>
+  {{ log model}}
+  {{partial "run-registers/data-table"}}
+
+</section>
+{{outlet}}

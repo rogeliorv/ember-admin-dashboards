@@ -7,8 +7,17 @@
   <li>
     {{#link-to 'runRegisters'}} <i class="fa fa-dashboard"></i> <span>Running Dashboard</span>{{/link-to}}
   </li>
-	<li>
-	  {{#link-to 'users'}} <i class="fa fa-users"></i> <span>Users</span>{{/link-to}}
-	</li>
+
+  <li>
+    {{#link-to 'users.edit' currentUser.user.id }} <i class="fa fa-user"></i> <span>Profile</span>{{/link-to}}
+  </li>
+
+
+  {{!-- User administration link only available for staff users --}}
+  {{#if (or currentUser.user.isStaff currentUser.user.isSuperuser )}}
+    <li>
+  	  {{#link-to 'users'}} <i class="fa fa-users"></i> <span>Users</span>{{/link-to}}
+  	</li>
+  {{/if}}
   </ul>
 </section>

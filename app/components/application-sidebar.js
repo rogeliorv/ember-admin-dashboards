@@ -1,8 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
+	currentUser: Ember.inject.service('currentUser'),
 	tagName: 'aside',
 	classNames: ['main-sidebar'],
+
 	didInsertElement: function(){
 		var that = this;
 		Ember.run.next(function(){

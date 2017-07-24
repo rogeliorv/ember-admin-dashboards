@@ -1,5 +1,10 @@
 <form {{action "save" on="submit"}}>
   <div class="form-group">
+      {{# if model.lastLogin }}
+        <p><small>Last login: {{ moment-format currentUser.user.lastLogin 'MMMM D, YYYY'}}</small></p>
+      {{ else }}
+        <p><small>Last login: Never</small></p>
+      {{/if}}
 
       <label for="username">Username</label>
       {{input name="username" class="form-control" type="text" value=model.username placeholder="Username"}}
@@ -16,18 +21,21 @@
       <label for="password">Password</label>
       {{input name="password" class="form-control" type="password" value=model.password placeholder="Password"}}
 
-      <div class="checkbox">
-        <label for="active">{{input name="password" type="checkbox" checked=model.isActive }} Active</label>
-      </div>
+      {{#if (and currentUser.user (or currentUser.user.isSuperuser currentUser.user.isStaff)) }}
+        <div class="checkbox">
+          <label for="active">{{input name="password" type="checkbox" checked=model.isActive }} Active</label>
+        </div>
+      {{/if}}
 
-      <div class="checkbox">
-        <label for="isStaff">{{input name="password" type="checkbox" checked=model.isStaff }} Staff</label>
-      </div>
+      {{#if (and currentUser.user currentUser.user.isSuperuser) }}
+        <div class="checkbox">
+          <label for="isStaff">{{input name="password" type="checkbox" checked=model.isStaff }} Staff</label>
+        </div>
 
-      <div class="checkbox">
-        <label for="isAdmin">{{input name="password" type="checkbox" checked=model.isSuperuser }} Admin</label>
-
-      </div>
+        <div class="checkbox">
+          <label for="isAdmin">{{input name="password" type="checkbox" checked=model.isSuperuser }} Admin</label>
+        </div>
+      {{/if}}
 
     <button type="submit" class="btn btn-default">Save</button>
   </div>

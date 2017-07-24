@@ -7,8 +7,8 @@
       <label for="distance">Distance (Kilometers)</label>
       {{input name="distance" class="form-control" type="number" value=model.distance placeholder="5 km" required=true}}
 
-      <label for="averageSpeed">Average Speed</label>
-      {{input name="averageSpeed" class="form-control" type="number" value=model.averageSpeed disabled=true}}
+      <label for="averageSpeed">Average Speed (km/h)</label>
+      {{input name="averageSpeed" class="form-control" type="number" value=model.speedFixed disabled=true}}
 
       <label for="date">Date</label>
       {{input name="date" class="form-control" type="text" value=model.date placeholder="YYYY-MM-DD" required=true}}
@@ -18,6 +18,8 @@
 
       <label for="details">Details</label>
       {{textarea name="details" class="form-control" type="text" value=model.details placeholder="Run details" required=false}}
+
+      {{ input name="userId" class="form-control" type="hidden" value=model.userId placeHolder=user}}
 
     <button type="submit" class="btn btn-default">Save</button>
   </div>

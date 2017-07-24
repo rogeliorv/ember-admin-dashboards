@@ -47,6 +47,6 @@ export default Ember.Component.extend({
 
 	// Logic.
 	didInsertElement: function(){
-		console.log("infobox!");
+		
 	}
 });

@@ -2,6 +2,9 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
+
+  currentUser: Ember.inject.service('current-user'),
+
   actions: {
     remove: function(model) {
       if(confirm('Are you sure?')) {
@@ -9,8 +12,15 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       }
     }
   },
+  
   model: function() {
-    return this.store.findAll('runRegister');
+    return this.store.findAll('runRegister').then(
+      (runRegisters) => {
+        let currentUserId = String(this.get('currentUser.user.id'));
+        return runRegisters.filter((runRegister) => String(runRegister.get('userId')) === currentUserId);
+      }).catch(() => {
+        console.log("Could not find records for run registers");
+      });
   },
 
   afterModel(model, transition) {
@@ -31,7 +41,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       let time = run.get('time');
       let distance = run.get('distance');
       let speed = run.get('speed');
-      console.log(time);
 
       bestSpeedRun = (bestSpeedRun === null || bestSpeedRun.get('speed') <= speed) ? run : bestSpeedRun;
       worstSpeedRun = (worstSpeedRun === null || worstSpeedRun.get('speed') >= speed) ? run : worstSpeedRun;
