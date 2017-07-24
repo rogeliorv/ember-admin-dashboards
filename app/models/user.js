@@ -4,6 +4,7 @@ export default DS.Model.extend({
   username: DS.attr('string'),
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
+  password: DS.attr('string'),
   email: DS.attr('string'),
   active: DS.attr('boolean'),
   isSuperuser: DS.attr('boolean'),
