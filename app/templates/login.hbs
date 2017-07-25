@@ -6,7 +6,6 @@
        {{#if usernameErrors }}
          <ul class="error">
            {{#each usernameErrors as |error|}}
-             {{log error}}
              <li>{{error}}</li>
            {{/each}}
          </ul>
@@ -30,6 +29,8 @@
              {{input id='password' class="form-control" placeholder='Password' type='password' value=password required=""}}
          </div>
      </div>
+
+     {{!--g-recaptcha onSuccess=(action "onCaptchaResolved")--}}
 
      <button class="btn btn-default submit" type="submit">
          Login

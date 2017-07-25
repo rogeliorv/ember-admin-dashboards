@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
       }).then((response) => {
         this.set('signupComplete', true);
       }, (xhr, status, error) => {
-        this.set('error', xhr.responseText);
+        this.set('errorMessages', xhr.responseText);
       });
     }
   }

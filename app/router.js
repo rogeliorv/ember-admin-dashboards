@@ -35,6 +35,9 @@ export default Router.map(function() {
   this.route('login');
   this.route('register');
   this.route('resetPassword');
+  this.route('resetConfirm', {
+    path: 'reset/:uid/:token'
+  });
   this.route('profile');
   this.route('users', function() {
     this.route('new');

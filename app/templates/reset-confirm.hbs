@@ -1,0 +1,40 @@
+<section class="resetPasswordSection">
+  {{#if passwordResetComplete}}
+    <p>Your password has been changed.</p>
+    {{#link-to 'index'}}Home{{/link-to}}
+  {{else}}
+  <form {{action 'resetPassword' on='submit'}}>
+
+    <div>
+      {{#if errorMessages }}
+        <ul class="error">
+          {{#each errorMessages as |error|}}
+            <li>{{error.detail}}</li>
+          {{/each}}
+        </ul>
+       {{/if}}
+
+       {{#unless passwordMatches}}
+          <ul class="error">
+            <li>Passwords do not match</li>
+          </ul>
+       {{/unless}}
+
+      <div class="form-group text-left">
+        <label for="new_password1">Password</label>
+        {{input name="new_password1" class="form-control" type="password" value=new_password1 placeholder="Password" required=""}}
+
+        <label for="new_password2">Password Confirmation</label>
+        {{input name="new_password2" class="form-control" type="password" value=new_password2 placeholder="Confirm password" required=""}}
+      </div>
+    </div>
+
+     <button class="btn btn-default submit" type="submit">
+       Reset Password
+     </button>
+
+  </form>
+  {{/if}}
+</section>
+
+{{outlet}}
